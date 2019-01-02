@@ -8,7 +8,7 @@ export abstract class Node {
     }
     
     addConnection(other: Node, edgeWeight: number): void {
-        if (this.isDirectConnection(other)) {
+        if (!this.isDirectConnection(other)) {
             this.neighbours.push(other)
             this.edgeWeights.set(other, edgeWeight)
         }
